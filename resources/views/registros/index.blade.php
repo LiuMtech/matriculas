@@ -7,14 +7,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Estudiantes Registrados</title>
+    <title>Estudiantes Matriculados</title>
 </head>
 
 <body>
     <x-app-layout>
         <x-slot name="header">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Registrados') }}
+                {{ __('Matriculados') }}
             </h2>
         </x-slot>
         <div class="py-12">
@@ -25,43 +25,23 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Tipo de Documento</th>
-                                        <th scope="col">Numero de Documento</th>
+                                        <th scope="col">Registro</th>
+                                        <th scope="col">C.C</th>
                                         <th scope="col">Nombre Completo</th>
                                         <th scope="col">Codigo Estudiantil</th>
-                                        <th scope="col">Edad</th>
-                                        <th scope="col">Género</th>
-                                        <th scope="col">Fecha de Nacimiento</th>
-                                        <th scope="col">Estado Civil</th>
-                                        <th scope="col">Telefono Fijo</th>
-                                        <th scope="col">Telefono Celular</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Departamento</th>
-                                        <th scope="col">Ciudad</th>
-                                        <th scope="col">Direccion de Residencia</th>
-                                        <th scope="col">Detalles Extra</th>
-                                        <th scope="col">Estrato</th>
+                                        <th scope="col">Id Carrera</th>
+                                        <th scope="col">Fecha de Registro</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($registros as $estudiante)
                                         <tr>
-                                            <td>{{ $estudiante->tipo_Documento }}</td>
+                                            <td>{{ $estudiante->num_Registro }}</td>
                                             <td>{{ $estudiante->id_Usuario }}</td>
                                             <td>{{ $estudiante->nom_Usuario }}</td>
-                                            <td>{{ $estudiante->id_Estudiante }}</td>
-                                            <td>{{ $estudiante->edad_Usuario }}</td>
-                                            <td>{{ $estudiante->genero_Usuario }}</td>
-                                            <td>{{ $estudiante->fec_Nac_Usuario }}</td>
-                                            <td>{{ $estudiante->est_Civil }}</td>
-                                            <td>{{ $estudiante->tel_Usuario }}</td>
-                                            <td>{{ $estudiante->cel_Usuario }}</td>
-                                            <td>{{ $estudiante->email_Usuario }}</td>
-                                            <td>{{ $estudiante->depto_Residencia }}</td>
-                                            <td>{{ $estudiante->ciudad_Residencia }}</td>
-                                            <td>{{ $estudiante->dir_Residencia }}</td>
-                                            <td>{{ $estudiante->detalles_Residencia }}</td>
-                                            <td>{{ $estudiante->estrato_Residencia }}</td>
+                                            <td>{{ $estudiante->cod_Estudiantil }}</td>
+                                            <td>{{ $estudiante->id_Carrera }}</td>
+                                            <td>{{ $estudiante->fec_Registro }}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

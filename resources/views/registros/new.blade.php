@@ -35,17 +35,17 @@
                             </div>
                             <div class="mb-3">
                                 <label for="name" class="form-label">Codigo Estudiantil</label>
-                                <input type="number" class="form-control" id="id_Estudiante"
-                                    ria-describedby="id_Estudiante" name="id_Estudiante"
+                                <input type="number" class="form-control" id="cod_Estudiantil"
+                                    ria-describedby="cod_Estudiantil" name="cod_Estudiantil"
                                     placeholder="Ingrese su Numero Estudiantil">
                             </div>
                             <br>
                             <div class="mb-3">
                                 <label for="carrera_id" class="form-label">Carrera</label>
-                                <select class="form-select" name="carrera_id" aria-label="Default select example">
+                                <select class="form-select" id="id_Carrera" name="id_Carrera" aria-label="Default select example">
                                     <option selected>Selecciona la carrera</option>
-                                    @foreach ($carreras as $carrera)
-                                        <option value="{{ $carrera->nom_Carrera }}">{{ $carrera->nombre }}</option>
+                                    @foreach ($carreras as $id => $nombre)
+                                        <option value="{{ $id }}">{{ $nombre }}</option>
                                     @endforeach
                                 </select>
                             </div>

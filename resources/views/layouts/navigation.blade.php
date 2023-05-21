@@ -12,13 +12,13 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Inicio') }}
+                    <x-nav-link :href="route('registros.create')" :active="request()->routeIs('registros.create')">
+                        {{ __('Nueva Matricula') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('registros.index')" :active="request()->routeIs('registros.index')">
-                        {{ __('Estudiantes') }}
+                        {{ __('Matriculados') }}
                     </x-nav-link>
                 </div>
 

@@ -25,7 +25,7 @@ class RegistroController extends Controller
      */
     public function create()
     {
-        $carreras  = Carreras::pluck('nom_Carrera');
+        $carreras  = Carreras::pluck('nom_Carrera','id_Carrera');
         return view('registros.new', compact('carreras'));
     }
 
@@ -40,9 +40,8 @@ class RegistroController extends Controller
         $registros = new Registro();
         $registros-> id_Usuario = $request->post('id_Usuario');
         $registros-> nom_Usuario = $request->post('nom_Usuario');
-        $registros-> id_Estudiante = $request->post('id_Estudiante');
+        $registros-> cod_Estudiantil = $request->post('cod_Estudiantil');
         $registros-> id_Carrera = $request->post('id_Carrera');
-        $registros-> nom_Carrera = $request->post('nom_Carrera');
         $registros-> fec_Registro = $request->post('fec_Registro');
 
         $registros->save();

@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Registro extends Model
 {
     use HasFactory;
-    protected $table = 'usuarios';
+    protected $table = 'registros';
+    public $timestamps = false;
     public function carrera()
     {
         return $this->belongsTo(Carreras::class, 'id_Carrera');
