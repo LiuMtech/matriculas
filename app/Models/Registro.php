@@ -11,6 +11,6 @@ class Registro extends Model
     protected $table = 'usuarios';
     public function carrera()
     {
-        return $this->belongsTo(Carrera::class, 'id_Carrera');
+        return $this->belongsTo(Carreras::class, 'id_Carrera');
     }
 }
