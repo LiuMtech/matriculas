@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\RegistroController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +29,8 @@ Route::middleware('auth')->group(function () {
 });
 Route::middleware('auth')->group(function () {
     Route::get('/registros', [RegistroController::class, 'index'])->name('registros.index');
+    Route::get('/registros/create', [RegistroController::class, 'create'])->name('registros.create');
+    Route::post('/store', [RegistroController::class, 'store'])->name('registros.store');
 });
 
 require __DIR__.'/auth.php';

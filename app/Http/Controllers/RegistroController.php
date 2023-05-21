@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Registro;
+use App\Models\Carreras;
 use Illuminate\Http\Request;
 
 class RegistroController extends Controller
@@ -24,7 +25,8 @@ class RegistroController extends Controller
      */
     public function create()
     {
-        //
+        $carreras  = Carreras::pluck('nom_Carrera');
+        return view('registros.new', compact('carreras'));
     }
 
     /**
@@ -35,7 +37,17 @@ class RegistroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $registros = new Registro();
+        $registros-> id_Usuario = $request->post('id_Usuario');
+        $registros-> nom_Usuario = $request->post('nom_Usuario');
+        $registros-> id_Estudiante = $request->post('id_Estudiante');
+        $registros-> id_Carrera = $request->post('id_Carrera');
+        $registros-> nom_Carrera = $request->post('nom_Carrera');
+        $registros-> fec_Registro = $request->post('fec_Registro');
+
+        $registros->save();
+        return redirect()->route('registros.index')->with('success', 'Matricula Registrada Correctamente');
+
     }
 
     /**
